@@ -2,7 +2,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { IconButton, InputAdornment, TextField } from '@mui/material'
 import React, {useState} from 'react'
 
-const Form = ({ label, type, icon }) => {
+const Form = ({ label, type, icon, value, onChange }) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -21,7 +21,7 @@ const Form = ({ label, type, icon }) => {
                         {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                 </InputAdornment> : null
-            }} sx={{ mb: 2 }} />
+            }} sx={{ mb: 2 }} value={value} onChange={onChange} />
         </>
     )
 }
